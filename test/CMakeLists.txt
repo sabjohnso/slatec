@@ -30,7 +30,7 @@ macro( add_slatec_test )
   
   add_executable( ${DRIVER} ${FILES} )
   
-  target_link_libraries( ${DRIVER} slatec lapack )
+  target_link_libraries( ${DRIVER} slatec_static lapack )
   set_target_properties( ${DRIVER} PROPERTIES LINK_FLAGS "-static" )
   
   add_test(
@@ -41,7 +41,7 @@ macro( add_slatec_test )
   if( BUILD_SHARED_LIBRARY )
     SET( SHARED_DRIVER ${DRIVER}_shared )
     add_executable( ${SHARED_DRIVER} ${FILES})
-    target_link_libraries( ${SHARED_DRIVER} slatec lapack )
+    target_link_libraries( ${SHARED_DRIVER} slatec_shared lapack )
 
     add_test(
       NAME ${NAME}_shared
