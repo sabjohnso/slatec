@@ -31,6 +31,11 @@ macro( add_slatec_test )
   add_executable( ${DRIVER} ${FILES} )
   
   target_link_libraries( ${DRIVER} slatec_static lapack )
+  
+  if( USE_OPTIMIZED_BLAS )
+    target_link_libraries( ${DRIVER} blas )
+  endif()
+  
   set_target_properties( ${DRIVER} PROPERTIES LINK_FLAGS "-static" )
   
   add_test(
@@ -42,6 +47,10 @@ macro( add_slatec_test )
     SET( SHARED_DRIVER ${DRIVER}_shared )
     add_executable( ${SHARED_DRIVER} ${FILES})
     target_link_libraries( ${SHARED_DRIVER} slatec_shared lapack )
+    
+    if( USE_OPTIMIZED_BLAS )
+      target_link_libraries( ${SHARED_DRIVER} blas )
+    endif()
 
     add_test(
       NAME ${NAME}_shared
@@ -65,6 +74,11 @@ macro( add_slatec_test_static_only )
   add_executable( ${DRIVER} ${FILES} )
   
   target_link_libraries( ${DRIVER} slatec lapack )
+
+  if( USE_OPTIMIZED_BLAS )
+    target_link_libraries( ${DRIVER} blas )
+  endif()
+
   set_target_properties( ${DRIVER} PROPERTIES LINK_FLAGS "-static" )
   
   add_test(

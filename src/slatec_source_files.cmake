@@ -77,3 +77,32 @@ SET( SLATEC_SOURCE_FILES
   bskin.f   cdotc.f   chpmv.f   cprocp.f  d9b1mp.f  dbsknu.f  ddscl.f   dintp.f   dpinit.f  dqk15.f   dsli2.f   dvnrms.f  gamit.f   isdgmr.f  orthog.f  prodp.f   r9gmit.f  scasum.f  sinqi.f   srot.f    stbsv.f   xermax.f  
   bspdoc.f  cdotu.f   chpr.f    cprod.f   d9chu.f   dbspdr.f  ddstp.f   dintrv.f  dpintm.f  dqk15i.f  dsllti.f  dvout.f   gamlim.f  isdir.f   orthol.f  prvec.f   r9knus.f  scg.f     sint.f    srotg.f   steps.f   xermsg.f  )
 
+
+
+
+set( BLAS_SOURCE_FILES
+  caxpy.f ccopy.f cdcdot.f cdotc.f cdotu.f cgbmv.f cgemm.f cgemv.f cgerc.f cgeru.f
+  chbmv.f chemm.f chemv.f cher2.f cher2k.f cher.f cherk.f chpmv.f chpr2.f chpr.f
+  crotg.f cscal.f csrot.f csscal.f cswap.f csymm.f csyr2k.f csyrk.f ctbmv.f ctbsv.f
+  ctpmv.f ctpsv.f ctrmm.f ctrmv.f ctrsm.f ctrsv.f dasum.f daxpy.f dcdot.f dcopy.f
+  dcopym.f ddot.f defc.f dgbmv.f dgemm.f dgemv.f dger.f dnrm2.f dqdota.f dqdoti.f
+  drot.f drotg.f drotm.f drotmg.f dsbmv.f dscal.f dsdot.f dspmv.f dspr2.f dspr.f
+  dswap.f dsymm.f dsymv.f dsyr2.f dsyr2k.f dsyr.f dsyrk.f dtbmv.f dtbsv.f dtpmv.f
+  dtpsv.f dtrmm.f dtrmv.f dtrsm.f dtrsv.f efc.f icamax.f icopy.f idamax.f isamax.f
+  iswap.f lpdp.f lsame.f mpadd2.f mpadd3.f mpblas.f mpcdm.f mpchk.f mpcmd.f mpdivi.f
+  mperr.f mpmaxr.f mpmul2.f mpmul.f mpnzr.f mpovfl.f mpstr.f sasum.f saxpy.f scasum.f
+  scnrm2.f scopy.f scopym.f sdot.f sdsdot.f sgbmv.f sgemm.f sgemv.f sger.f snrm2.f
+  srot.f srotg.f srotm.f srotmg.f ssbmv.f sscal.f sspmv.f sspr2.f sspr.f sswap.f
+  ssymm.f ssymv.f ssyr2.f ssyr2k.f ssyr.f ssyrk.f stbmv.f stbsv.f stpmv.f stpsv.f
+  strmm.f strmv.f strsm.f strsv.f )
+
+
+# A list of files that are not in the OpenBLAS library but are part of the SLATEC
+# BLAS library.
+set( RETAINED_BLAS_SOURCE_FILES
+  iswap.f dcdot.f mpchk.f mpmul2.f lpdp.f scopym.f icopy.f mpadd2.f cdcdot.f 
+  mpadd3.f mpstr.f mpnzr.f mpovfl.f mperr.f
+  mpmaxr.f
+  dqdoti.f dqdota.f
+  mpblas.f mpmul.f mpcmd.f mpcdm.f
+  mpdivi.f )

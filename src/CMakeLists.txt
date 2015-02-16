@@ -18,6 +18,12 @@
 include( slatec_source_files.cmake )
 
 
+if( USE_OPTIMIZED_BLAS )
+  list( REMOVE_ITEM SLATEC_SOURCE_FILES ${BLAS_SOURCE_FILES} )
+  list( APPEND SLATEC_SOURCE_FILES ${RETAINED_BLAS_SOURCE_FILES} )
+endif()
+
+
 #
 # ... Build the static library
 #

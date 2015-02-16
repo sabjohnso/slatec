@@ -22,6 +22,7 @@ enable_language( Fortran )
 #
 # ... Options
 #
+option( USE_OPTIMIZED_BLAS   "Link to the system BLAS library?" ON )
 option( BUILD_SHARED_LIBRARY "Build the shared library?" ON )
 option( BUILD_TESTS "Build the SLATEC tests?" ON )
 
