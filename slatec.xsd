@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.samsland.com/SLATEC"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.samsland.com/SLATEC">
+  
+  <xs:complexType name="HW3CRT">
+    <xs:sequence>
+      real xs
+      real xf
+      integer l
+      integer lbdcnd
+      real bdxs
+      real bdxf
+      real ys
+      real yf
+      integer m
+      integer mbdcnd
+      real bdys
+      real bdyf
+      real zs
+      real zf
+      integer n
+      integer nbdcnd
+      real bdzs
+      real bdzf
+      real elmbda
+      integer ldimf
+      integer mdimf
+      real f
+      real pertrb
+      integer ierror
+      real w
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>
