@@ -1,5 +1,5 @@
 *DECK DAXPY
-      SUBROUTINE DAXPY (N, DA, DX, INCX, DY, INCY)
+      SUBROUTINE DAXPY( N, DA, DX, INCX, DY, INCY )
 C***BEGIN PROLOGUE  DAXPY
 C***PURPOSE  Compute a constant times a vector plus a vector.
 C***LIBRARY   SLATEC (BLAS)

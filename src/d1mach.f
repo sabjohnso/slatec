@@ -70,12 +70,12 @@ C   930201  Added DEC Alpha and SGI constants.  (RWC and WRB)
 C***END PROLOGUE  D1MACH
 C
 C
-	external dlamch
-      DOUBLE PRECISION DMACH(5),dlamch
-	integer iflag
+      EXTERNAL DLAMCH
+      DOUBLE PRECISION DMACH(5),DLAMCH
+      INTEGER IFLAG
 
-      SAVE DMACH,iflag
-	data iflag/0/
+      SAVE DMACH,IFLAG
+      DATA IFLAG/0/
 C
 C
 C     MACHINE CONSTANTS FOR THE AMIGA

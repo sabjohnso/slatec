@@ -39,6 +39,7 @@ if( BUILD_SHARED_LIBRARY )
   list( REMOVE_ITEM SLATEC_SOURCE_FILES ${EXCLUDE_FROM_SHARED} )
   
   add_library( slatec_shared SHARED ${SLATEC_SOURCE_FILES} )
+  target_link_libraries( slatec_shared blas lapack )
   set_target_properties( slatec_shared PROPERTIES OUTPUT_NAME slatec )
   install( TARGETS slatec_shared LIBRARY DESTINATION lib )
   

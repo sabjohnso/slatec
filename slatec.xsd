@@ -6,33 +6,63 @@
            xmlns="http://www.samsland.com/SLATEC">
   
   <xs:complexType name="HW3CRT">
+
     <xs:sequence>
-      real xs
-      real xf
-      integer l
-      integer lbdcnd
-      real bdxs
-      real bdxf
-      real ys
-      real yf
-      integer m
-      integer mbdcnd
-      real bdys
-      real bdyf
-      real zs
-      real zf
-      integer n
-      integer nbdcnd
-      real bdzs
-      real bdzf
-      real elmbda
-      integer ldimf
-      integer mdimf
-      real f
-      real pertrb
-      integer ierror
-      real w
+
+      <xs:element name="xs" type="Real"/>
+      <xs:element name="xf" type="Real"/>
+      <xs:element name="l" type="Integer"/>
+      <xs:element name="lbdcnd" type="Integer"/>
+      <xs:element name="bdxs" type="Integer"/>
+      <xs:element name="bdxf" type="Reals"/>
+      
+      <xs:element name="ys" type="Real"/>
+      <xs:element name="yf" type="Real"/>
+      <xs:element name="m" type="Integer"/>
+      <xs:element name="mbdcnd" type="Integer"/>
+      <xs:element name="bdys" type="Reals"/>
+      <xs:element name="bdyf" type="Reals"/>
+      
+      <xs:element name="zs" type="Real"/>
+      <xs:element name="zf" type="Real"/>
+      <xs:element name="n" type="Integer"/>
+      <xs:element name="nbdcnd" type="Integer"/>
+      <xs:element name="bdzs" type="Reals"/>
+      <xs:element name="bdzf" type="Reals"/>
+      <xs:element name="elmbda" type="Real"/>
+      <xs:element name="ldimf" type="Integer"/>
+      <xs:element name="mdimf" type="Integer"/>
+      
+      <xs:element name="f" type="Reals"/>
+      
+      <xs:element name="pertrb" type="Real"/>
+      <xs:element name="ierror" type="Integer"/>
+      
+      <xs:element name="w" type="Integer"/>
+      
     </xs:sequence>
   </xs:complexType>
+
+  <xs:complexType name="BoundaryPair">
+    <xs:element name="pannelCount" type="Integer"/>
+    <xs:element name="boundaryType" type="Integer"/>
+    <xs:element name="first" type="BoundaryData"/>
+    <xs:element name="second" type="BoundaryData"/>
+  </xs:complexType>
+  
+  <xs:complexType name="BoundaryData">
+    <xs:sequence>
+      <xs:element name="position" type="Real"/>
+      <xs:element name="values" type="Reals"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="Reals">
+    <xs:list itemType="Real"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="Real">
+
+  </xs:simpleType>
   
 </xs:schema>
